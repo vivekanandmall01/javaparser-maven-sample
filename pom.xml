@@ -4,30 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- This is often your domain name (reversed.)  -->
     <groupId>com.yourorganization</groupId>
-    <!-- The name of this project (actually, the name of the artifact, which is the thing that this project produces. A jar in this case.) -->
     <artifactId>javaparser-maven-sample</artifactId>
-    <!-- The version of this project. SNAPSHOT means "we're still working on it" -->
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <!-- Tell Maven we want to use Java 8 -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <!-- Tell Maven to treat all source files as UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <!-- Existing dependency: JavaParser -->
         <dependency>
             <groupId>com.github.javaparser</groupId>
             <artifactId>javaparser-core</artifactId>
             <version>3.26.2</version>
         </dependency>
-
-        <!-- New dependency: CycloneDX Core Java -->
         <dependency>
             <groupId>org.cyclonedx</groupId>
             <artifactId>cyclonedx-core-java</artifactId>
@@ -37,7 +29,6 @@
 
     <build>
         <plugins>
-            <!-- Existing Maven Shade Plugin Configuration -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -60,11 +51,11 @@
                 </executions>
             </plugin>
 
-            <!-- CycloneDX Maven Plugin Configuration -->
+            <!-- CycloneDX Maven Plugin Version 2.7.8 -->
             <plugin>
                 <groupId>org.cyclonedx</groupId>
                 <artifactId>cyclonedx-maven-plugin</artifactId>
-                <version>1.7.5</version>
+                <version>2.7.8</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -86,8 +77,8 @@
                     <outputReactorProjects>true</outputReactorProjects>
                     <outputFormat>all</outputFormat>
                     <outputName>bom</outputName>
-                    <outputDirectory>${project.build.directory}</outputDirectory><!-- usually target, if not redefined in pom.xml -->
-                    <verbose>false</verbose><!-- = ${cyclonedx.verbose} -->
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <verbose>false</verbose>
                 </configuration>
             </plugin>
         </plugins>
