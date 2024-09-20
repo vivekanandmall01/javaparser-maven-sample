@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>org.cyclonedx</groupId>
                 <artifactId>cyclonedx-maven-plugin</artifactId>
-                <version>8.0.0</version>
+                <version>7.2.1</version> <!-- Changed the version to 7.2.1 -->
                 <executions>
                     <execution>
                         <phase>package</phase>
