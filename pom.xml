@@ -20,11 +20,18 @@
     </properties>
 
     <dependencies>
-        <!-- Here are all your dependencies. Currently only one. These are automatically downloaded from https://mvnrepository.com/ -->
+        <!-- Existing dependency: JavaParser -->
         <dependency>
             <groupId>com.github.javaparser</groupId>
             <artifactId>javaparser-core</artifactId>
             <version>3.26.2</version>
+        </dependency>
+
+        <!-- New dependency: CycloneDX Core Java -->
+        <dependency>
+            <groupId>org.cyclonedx</groupId>
+            <artifactId>cyclonedx-core-java</artifactId>
+            <version>9.0.4</version>
         </dependency>
     </dependencies>
 
